@@ -30,6 +30,9 @@ html, body {
     --menu-color-g: 0;
     --menu-color-b: 0;
     --menu-color-hex: rgb(255, 0, 0);
+    --menu-bg-color: #000000;
+    --menu-border-color: #383838;
+    --menu-selection-color: rgba(78, 78, 78, 0.1);
 }
 
 #app {
@@ -44,21 +47,21 @@ html, body {
 /* Main container */
 .menu-container.svelte-11594kh {
     position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 20%;
+    left: 10%;
+    transform: translateY(-50%);
     width: 40.5vh;
     min-height: 20 vh;
     max-height: 40 vh;
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
-    border: 0.2vh solid var(--menu-color-hex);
-    border-radius: 2vh;
+    background: linear-gradient(135deg, var(--menu-bg-color) 0%, #1a1a1a 50%, var(--menu-bg-color) 100%);
+    border: 0.2vh solid var(--menu-border-color);
+    border-radius: 1.5vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     font-family: 'Inter', 'JetBrains Mono', monospace;
-    box-shadow: 0 0 3vh rgba(0, 0, 0, 0.9), 0 0 2vh var(--menu-color-hex), inset 0 0 1vh rgba(255, 255, 255, 0.05);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 0 2vh rgba(0, 0, 0, 0.8), 0 0 1vh var(--menu-color-hex);
+    transition: all 0.3s ease;
 }
 /* Header Banner */
 .menu-header.svelte-11594kh {
@@ -163,7 +166,7 @@ html, body {
 }
 
 .menu-item.active.svelte-11594kh {
-    background: rgba(78, 78, 78, 0.1);
+    background: var(--menu-selection-color);
     border-left: 0.2vh solid var(--menu-color-hex);
     transform: translateX(0.1vh);
 }
@@ -4241,6 +4244,20 @@ function Gt(t) {
                                 document.documentElement.style.setProperty('--menu-color-g', color.g / 255);
                                 document.documentElement.style.setProperty('--menu-color-b', color.b / 255);
                                 document.documentElement.style.setProperty('--menu-color-hex', `rgb(${color.r}, ${color.g}, ${color.b})`);
+                            }
+                            break;
+                        case "updateMenuDesign":
+                            const design = p.design;
+                            if (design) {
+                                if (design.bgColor) {
+                                    document.documentElement.style.setProperty('--menu-bg-color', design.bgColor);
+                                }
+                                if (design.borderColor) {
+                                    document.documentElement.style.setProperty('--menu-border-color', design.borderColor);
+                                }
+                                if (design.selectionColor) {
+                                    document.documentElement.style.setProperty('--menu-selection-color', design.selectionColor);
+                                }
                             }
                             break;
                         }
